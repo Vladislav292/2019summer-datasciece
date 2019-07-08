@@ -2,7 +2,7 @@
 ## Announcement
 ★Course: Data science programming <br/>
 ★Name:Yi-Fang Lo <br/>
-★School and Department:NTU dept. of Physics (estimated:2019-2023)<br/>
+★School and Department:NTU Dept. of Physics (estimated:2019-2023)<br/>
 ★Email: yifang255@gmail.com <br/>
 # Schedule <br/>
 ## Week1 <br/>

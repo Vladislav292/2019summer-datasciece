@@ -9,6 +9,7 @@
 * 08 July install R and RStudio<br/>
 Set up a RMarkdown
 [work0](https://vladislav292.github.io/2019summer-datasciece/work1/1.html) <br/>
+edited the content with sample graph from book R4DS (09 JULY) <br/>
 ## Week2 <br/>
 ## Week3<br/>
 ## Week4

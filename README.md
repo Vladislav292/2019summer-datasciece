@@ -8,7 +8,7 @@
 ## Week1 <br/>
 * 08 July install R and RStudio<br/>
 Set up a RMarkdown
-[work0](https://vladislav292.github.io/2019summer-datasciece/work0/1.html) <br/>
+[work0](https://vladislav292.github.io/2019summer-datasciece/work0/test.html) <br/>
 ## Week2 <br/>
 ## Week3<br/>
 ## Week4

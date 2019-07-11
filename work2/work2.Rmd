@@ -1,0 +1,51 @@
+---
+title: "Relationship between NTD USD exchange rate and Taiwan Stock market performance"
+author: "Yi-Fang Lo"
+date: "7/11/2019"
+output: html_document
+---
+# Data about Taiwan Stock Market Index and Exchange rate
+First inport the data about exchange rate and call out dplyr 
+[source](https://www.taifex.com.tw/cht/3/dailyFXRate)
+
+```{r}
+library(readr)
+exchangerate <- read_csv("C:/Users/Maple/Downloads/exchangerate.csv", 
+col_types = cols(date = col_date(format = "%m/%d/%Y")))
+head(exchangerate)
+library(dplyr)
+```
+Than inport the data about stock market index
+[source](https://www.twse.com.tw/zh/page/trading/indices/MI_5MINS_HIST.html)
+```{r}
+MI_5MINS_HIST <- read_csv("C:/Users/Maple/Downloads/TSI/MI_5MINS_HIST.csv", 
+col_types = cols(date = col_date(format = "%m/%d/%Y")))
+head(MI_5MINS_HIST)
+```
+
+Merge the two sets of data by the parameter "date"
+```{r}
+data_merged<-merge(exchangerate, MI_5MINS_HIST, by="date")
+head(data_merged)
+```
+Create a new column "median" to represent the overall stock market index
+```{r}
+data_merged<-data_merged %>% mutate(MEDIAN= max/2+min/2)
+head(data_merged)
+```
+Take out columns "USDNTD" "date" "NEDIAN"
+```{r}
+data_nece <- data_merged %>% select(date, MEDIAN, USDNTD)
+head(data_nece)
+```
+make a graph based on the data with x=date y= median and usdntd respectively
+```{r}
+library(tidyverse)
+ggplot(data=data_nece)+geom_smooth(mapping=aes(x=date,y=MEDIAN))
+```
+```{r}
+ggplot(data=data_nece)+geom_smooth(mapping=aes(x=date, y=USDNTD))
+```
+
+Conclusion 
+These is little, if any, relationship between the US NTD exchange rate and Taiwan Stock market index

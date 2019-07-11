@@ -11,7 +11,7 @@ Set up a RMarkdown <br/>
 [work0](https://vladislav292.github.io/2019summer-datasciece/work1/1.html) <br/>
 edited the content with sample graph from book R4DS (09 JULY) <br/>
 * 11 July incorporating 2 sets of data <br/>
-[work2]()
+[work1](https://vladislav292.github.io/2019summer-datasciece/work2/work2.html)
 ## Week2 <br/>
 ## Week3<br/>
 ## Week4

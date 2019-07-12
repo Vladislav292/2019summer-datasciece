@@ -16,7 +16,7 @@ col_types = cols(date = col_date(format = "%m/%d/%Y")))
 head(exchangerate)
 library(dplyr)
 ```
-Than inport the data about stock market index
+Than import the data about stock market index
 [source](https://www.twse.com.tw/zh/page/trading/indices/MI_5MINS_HIST.html)
 ```{r warning=FALSE,message=FALSE}
 MI_5MINS_HIST <- read_csv("C:/Users/Maple/Downloads/TSI/MI_5MINS_HIST.csv", 

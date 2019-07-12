@@ -398,7 +398,7 @@ head(exchangerate)</code></pre>
 ## 5 2018-01-08   29.5   4.55   1.20   113.   1.35  0.783   7.82   6.49
 ## 6 2018-01-09   29.5   4.53   1.19   113.   1.35  0.784   7.82   6.52</code></pre>
 <pre class="r"><code>library(dplyr)</code></pre>
-<p>Than inport the data about stock market index <a href="https://www.twse.com.tw/zh/page/trading/indices/MI_5MINS_HIST.html">source</a></p>
+<p>Than import the data about stock market index <a href="https://www.twse.com.tw/zh/page/trading/indices/MI_5MINS_HIST.html">source</a></p>
 <pre class="r"><code>MI_5MINS_HIST &lt;- read_csv(&quot;C:/Users/Maple/Downloads/TSI/MI_5MINS_HIST.csv&quot;, 
 col_types = cols(date = col_date(format = &quot;%m/%d/%Y&quot;)))
 head(MI_5MINS_HIST)</code></pre>

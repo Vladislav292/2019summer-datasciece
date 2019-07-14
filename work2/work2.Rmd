@@ -51,4 +51,4 @@ ggplot(data=data_nece)+geom_smooth(mapping=aes(x=date, y=USDNTD))
 ```
 
 Conclusion 
-These is little, if any, relationship between the USD NTD exchange rate and Taiwan Stock market index
+There is little, if any, relationship between the USD NTD exchange rate and Taiwan Stock market index

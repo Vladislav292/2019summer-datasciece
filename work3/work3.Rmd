@@ -1,0 +1,87 @@
+---
+title: "Exchange rates and stock market"
+author: "Yi-Fang Lo"
+date: "7/15/2019"
+output: html_document
+---
+# Foreign currencies and Taiwan Stock market
+
+## Objective: explore the relationship between Foreign currency exchange rates and Taiwan stock market performance
+## Data source:Previous homework, Click [HERE](https://vladislav292.github.io/2019summer-datasciece/work2/work2.html) to learn more
+```{r message=FALSE,warning=FALSE}
+library(readr)
+library(tidyverse)
+data_merged <- read_csv("C:/Users/Maple/Documents/work3/data_merged.csv")
+
+```
+## USD exchange rate
+First make a graph to visulaize the relationship between date and USD/NTD exchange rate
+```{r message=FALSE,warning=FALSE}
+ggplot(data = data_merged) + geom_line (mapping = aes (x= date, y=USDNTD))+ geom_point(mapping = aes (x=date, y=USDNTD))
+
+```
+
+Then make a graph to visulaize the relationship between date and Taiwan Stock Market Index
+
+```{r message=FALSE, warning=FALSE}
+ggplot(data = data_merged, mapping=aes(x= date, y = MEDIAN)) + geom_line()+geom_point()
+```
+
+
+Make a graph between USD/NTD exchnage rate and Taiwan Stock Index
+```{r message=FALSE,warning=FALSE}
+ggplot(data = data_merged,mapping = aes(x= USDNTD, y=MEDIAN))+ geom_smooth()+ geom_point()
+```
+
+## RMB exchange rate
+Make a graph to understade the relationship between date and RMB/NTD exchange rate
+```{r message=FALSE,warning=FALSE}
+ggplot(data = data_merged,mapping=aes(x=date,y=RMBNTD))+geom_point()+geom_line()
+```
+
+
+And then Make a graph base on RMB and Stock Martet Index
+
+```{r message=FALSE,warning=FALSE}
+ggplot(data = data_merged, mapping = aes (x = RMBNTD, y = MEDIAN)) + geom_smooth()+ geom_point()
+```
+## JPY exchange rate
+
+Make a graph based on JPY/NTD and date, however, since we don't have JPY/NTD exchange rate, thus, we must calculate the value through USD/NTD exchange rate and USD/JPY exchange rate
+```{r message=FALSE,warning=FALSE}
+data_new <- data_merged %>% mutate(JPYNTD = USDNTD/USDJPY)
+```
+
+After we aquire the exchange rate,plot the date-JPY graph
+
+```{r message=FALSE,warning=FALSE}
+ggplot(data = data_new, mapping = aes (x= date , y=JPYNTD))+ geom_line()+geom_point()
+
+```
+
+
+Make a graph to visualize the relation between JPY/NTD and Taiwan Stock Index
+```{r message=FALSE,warning=FALSE}
+ggplot(data = data_new, mapping = aes(x= JPYNTD, y= MEDIAN))+ geom_point()+ geom_smooth()
+```
+
+
+Lastly, let us do some statistics about currency exchange rates
+```{r message=FALSE,warning=FALSE}
+USD <- data_new %>%　select(USDNTD)
+JPY <- data_new %>%  select(JPYNTD)
+RMB <- data_new %>%  select(RMBNTD)
+dfUSD <- USD %>% mutate(type="USD")
+dfJPY <- JPY %>% mutate(type="JPY")
+dfRMB <- RMB %>% mutate(type="RMB")
+ggplot(data = dfUSD,mapping = aes(x=type,y=USDNTD))+ geom_boxplot()
+ggplot(data = dfJPY,mapping = aes(x=type,y=JPYNTD))+ geom_boxplot()
+ggplot(data = dfRMB,mapping = aes(x=type,y=RMBNTD))+ geom_boxplot()
+```
+
+
+## Conclusions
+According to these little data we have, we may guess that
+* As USD/NTD>30.5, the Stock Market Index becomes really hard to predict and may drop suddenly as USD/NTD>30.75.<br/>
+* As RMB/NTD>4.5, the Stock Market Indext has a good chance to be higher than 10250. However, as RMB/NTD<4.5, the chance for the Index to be lower than 10000 is greater than that of be higher than 10000.<br/>
+* JPY/NTD exchange rate has little relationship with the Index.<br/>

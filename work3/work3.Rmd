@@ -65,6 +65,38 @@ Make a graph to visualize the relation between JPY/NTD and Taiwan Stock Index
 ggplot(data = data_new, mapping = aes(x= JPYNTD, y= MEDIAN))+ geom_point()+ geom_smooth()
 ```
 
+After these analysis, let us see if we can find something new by intergrating the excchange rate to date graph with index to date graph
+```{r}
+p <- ggplot(data_new, aes(x = date))
+p <- p + geom_line(aes(y=USDNTD, colour = "USD/NTD"))
+p <- p + geom_line(aes(y=MEDIAN/410, colour = "Index"))
+p <- p + scale_y_continuous(sec.axis = sec_axis(~.*410, name = "Index"))
+p <- p + scale_colour_manual(values = c("blue", "red"))
+p <- p + labs(y = "USD/NTD",x = "date",colour = "Parameter")
+p <- p + theme(legend.position = c(0.8, 0.9))
+p
+
+q <- ggplot(data_new, aes(x = date))
+q <- q + geom_line(aes(y=RMBNTD, colour = "RMB/NTD"))
+q <- q + geom_line(aes(y=MEDIAN/2600, colour = "Index"))
+q <- q + scale_y_continuous(sec.axis = sec_axis(~.*2600, name = "Index"))
+q <- q + scale_colour_manual(values = c("blue", "red"))
+q <- q + labs(y = "RMB/NTD",x = "date",colour = "Parameter")
+q <- q + theme(legend.position = c(0.8, 0.9))
+q
+
+r <- ggplot(data_new, aes(x = date))
+r <- r + geom_line(aes(y=JPYNTD, colour = "JPY/NTD"))
+r <- r + geom_line(aes(y=MEDIAN/46500, colour = "Index"))
+r <- r + scale_y_continuous(sec.axis = sec_axis(~.*46500, name = "Index"))
+r <- r + scale_colour_manual(values = c("blue", "red"))
+r <- r + labs(y = "JPY/NTD",x = "date",colour = "Parameter")
+r <- r + theme(legend.position = c(0.8, 0.9))
+r
+
+
+```
+
 
 Lastly, let us do some statistics about currency exchange rates
 ```{r message=FALSE,warning=FALSE}

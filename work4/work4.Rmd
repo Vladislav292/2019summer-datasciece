@@ -1,0 +1,189 @@
+---
+title: "Text analysis homework"
+output: html_document
+author: Yi-Fang Lo
+---
+# Work discription
+This work analyses words in paragraphs from PTT srock board. Firstly, I did  web scraping from PTT to acquire the data I need. Then I changedd the data type to Corpus and do some operartions to clean out words that are of little significance. After these processes, I segmented the paragraphs into words, creating a term document matrix. Eventually, I applied TF-IDF method to filter unimportant word and print out the key words.
+# Grouping explanation
+I treatred each paragraph as a group(a column in TDM) for two reasons. First, I want to see how key words varies with time in a month and the sequence of paragraphs matches with that of time. Therefore, there is no need to do it again. Secondm the grouping syntax in R is just complicated and I haven't found out how to do that so far.
+## First, load all packages needed
+
+```{r}
+rm(list=ls())
+library(rvest)
+library(tm)
+library(jiebaR)
+library(Matrix)
+library(kableExtra)
+library(bitops)
+library(httr)
+library(RCurl)
+library(rvest)
+library(XML)
+library(tm)
+library(jiebaRD)
+library(jiebaR)
+library(NLP)
+library(tmcn)
+library(dplyr)
+
+```
+## Web scrapping
+ 
+ 1.scrapping URLs
+ 
+```{r}
+star <- 4892 
+term   <- 4895
+pre = "https://www.ptt.cc/bbs/Stock/index"
+
+data <- list()
+for( k in c(star:term) )
+{
+  url  <- paste0( pre, as.character(k), ".html" )
+  html <- htmlParse( GET(url) )
+  url.list <- xpathSApply( html, "//div[@class='title']/a[@href]", xmlAttrs )
+  data <- rbind( data, as.matrix(paste('https://www.ptt.cc', url.list, sep='')) )
+}
+data <- unlist(data)
+
+head(data)
+
+
+```
+
+ 2.Scrapping text
+
+```{r}
+content <- c()
+for(i in 1:length(data)){
+  url <- data[i]
+  print(url)
+  
+  content[i] <- read_html(url) %>% 
+    html_nodes("#main-content") %>%
+    html_text
+}
+
+content <- as.list(content)
+toSpace <- content_transformer(function(x, pattern) {
+  return (gsub(pattern, "", x))}
+)
+
+
+```
+
+## Cleaning text
+
+```{r}
+cont.corpus <- Corpus(VectorSource(content)) %>% 
+  tm_map(function(word) { 
+    gsub("[A-Za-z0-9]", "", word)
+  })%>%
+  tm_map(removePunctuation) %>%
+  tm_map(removeNumbers) %>%
+  tm_map(toSpace,"的") %>%
+  tm_map(toSpace,"推") %>%
+  tm_map(toSpace,"沒") %>%
+  tm_map(toSpace,"是") %>%
+  tm_map(toSpace,"了") %>%
+  tm_map(toSpace,"噓") %>%
+  tm_map(toSpace,"你") %>%
+  tm_map(toSpace,"我") %>%
+  tm_map(toSpace,"也") %>%
+  tm_map(toSpace,"就") %>%
+  tm_map(toSpace,"都") %>%
+  tm_map(toSpace,"不") %>%
+  tm_map(toSpace,"要") %>%
+  tm_map(toSpace,"會") %>%
+  tm_map(toSpace,"在") %>%
+  tm_map(toSpace,"再") %>%
+  tm_map(toSpace,"人") %>%
+  tm_map(toSpace,"吧") %>%
+  tm_map(toSpace,"嗎") %>%
+  tm_map(toSpace,"這") %>%
+  tm_map(toSpace,"它") %>%
+  tm_map(toSpace,"被") %>%
+  tm_map(toSpace,"與") %>%
+  tm_map(toSpace,"有") %>%
+  tm_map(toSpace,"但") 
+ 
+
+```
+
+## Cutting text
+
+```{r}
+mixseg = worker()
+jieba_tker = function(d){ 
+  unlist(segment(d[[1]], mixseg))
+}
+qiehaode <- lapply(cont.corpus, jieba_tker)
+n <- length(qiehaode)
+
+
+
+todtf = function(d){ 
+  as.data.frame(table(d))
+}
+dtf = lapply(qiehaode,todtf) 
+
+TDMatrix = dtf[[1]] 
+for(k in 2:n){
+  TDMatrix = merge(TDMatrix, dtf[[k]], by="d", all = TRUE)
+  names(TDMatrix) = c('d', 1:k) 
+}
+
+TDMatrix[is.na(TDMatrix)] <- 0 
+head(TDMatrix)
+
+
+
+```
+
+## TF-IDF
+
+```{r}
+tf <- apply(as.matrix(TDMatrix[,2:(n+1)]), 2, sum) 
+calIDF <- function(word_doc){
+  log( n / nnzero(word_doc) ) 
+}
+
+IDF <- apply(as.matrix(TDMatrix[,2:(n+1)]), 1, calIDF) 
+TFIDF <- TDMatrix
+
+
+MtY = matrix(rep(c(as.matrix(tf)), each = length(IDF)), nrow = length(IDF)) 
+MtX = matrix(rep(c(as.matrix(IDF)), each = length(tf)), ncol = length(tf), byrow = TRUE)
+TFIDF[,2:(n+1)] <- (TFIDF[,2:(n+1)] / MtY) * MtX
+
+stopLine = rowSums(TFIDF[,2:(n+1)]) 
+delID = which(stopLine == 0) 
+head(TFIDF[delID,1]) 
+
+TDMatrix = TDMatrix[-delID,] 
+TFIDF= TDMatrix
+
+
+```
+
+# Listing top words
+
+```{r}
+
+
+TopWords = data.frame()
+for( id in 1:n ){
+  dayMax = order(TFIDF[,id+1], decreasing = TRUE) 
+  showResult = t(as.data.frame(TFIDF[dayMax[1:5],1])) 
+  TopWords = rbind(TopWords, showResult) 
+}
+
+rownames(TopWords) = colnames(TFIDF)[2:(n+1)]
+TopWords = droplevels(TopWords)
+
+TopWords
+
+```
+

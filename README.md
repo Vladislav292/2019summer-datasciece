@@ -16,5 +16,6 @@ edited the content with sample graph from book R4DS (09 JULY) <br/>
 * 15 July Data visualization <br/>
 [work2](https://vladislav292.github.io/2019summer-datasciece/work3/work3.html)<br/>
 Ref: [Instructions to making double-y graphs (simplified Chinese)](https://blog.csdn.net/kMD8d5R/article/details/81713813)
+* 18 July Text data processing <br/>
+[work3](https://vladislav292.github.io/2019summer-datasciece/work4/work4.html)<br/>
 ## Week3<br/>
-## Week4

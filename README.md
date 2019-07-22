@@ -19,3 +19,8 @@ Ref: [Instructions to making double-y graphs (simplified Chinese)](https://blog.
 * 18 July Text data processing <br/>
 [work3](https://vladislav292.github.io/2019summer-datasciece/work4/work4.html)<br/>
 ## Week3<br/>
+<br/>
+<br/>
+<br/>
+# For final project group member only
+[DATA 1](https://raw.githubusercontent.com/Vladislav292/2019summer-datasciece/master/vands.csv)

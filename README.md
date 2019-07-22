@@ -22,6 +22,4 @@ Ref: [Instructions to making double-y graphs (simplified Chinese)](https://blog.
 <br/>
 <br/>
 <br/>
-#  For final project group member only
-[Data1] (https://raw.githubusercontent.com/Vladislav292/2019summer-datasciece/master/vands.csv)
-[Data2] ()
+

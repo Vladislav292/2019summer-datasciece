@@ -432,12 +432,12 @@ for( k in c(star:term) )
 data &lt;- unlist(data)
 
 head(data)</code></pre>
-<pre><code>## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559357253.A.3F4.html&quot;
-## [2] &quot;https://www.ptt.cc/bbs/Stock/M.1559357971.A.398.html&quot;
-## [3] &quot;https://www.ptt.cc/bbs/Stock/M.1559358098.A.291.html&quot;
-## [4] &quot;https://www.ptt.cc/bbs/Stock/M.1559359419.A.21F.html&quot;
-## [5] &quot;https://www.ptt.cc/bbs/Stock/M.1559361797.A.88E.html&quot;
-## [6] &quot;https://www.ptt.cc/bbs/Stock/M.1559362445.A.082.html&quot;</code></pre>
+<pre><code>## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559785375.A.6CC.html&quot;
+## [2] &quot;https://www.ptt.cc/bbs/Stock/M.1559785445.A.D02.html&quot;
+## [3] &quot;https://www.ptt.cc/bbs/Stock/M.1559786478.A.894.html&quot;
+## [4] &quot;https://www.ptt.cc/bbs/Stock/M.1559788644.A.D36.html&quot;
+## [5] &quot;https://www.ptt.cc/bbs/Stock/M.1559790773.A.B16.html&quot;
+## [6] &quot;https://www.ptt.cc/bbs/Stock/M.1559791308.A.B53.html&quot;</code></pre>
 <p>2.Scrapping text</p>
 <pre class="r"><code>content &lt;- c()
 for(i in 1:length(data)){
@@ -448,86 +448,86 @@ for(i in 1:length(data)){
     html_nodes(&quot;#main-content&quot;) %&gt;%
     html_text
 }</code></pre>
-<pre><code>## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559357253.A.3F4.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559357971.A.398.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559358098.A.291.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559359419.A.21F.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559361797.A.88E.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559362445.A.082.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559364040.A.E4D.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559364134.A.7F1.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559364156.A.F1A.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559364849.A.688.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559365431.A.0CE.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559366151.A.AF4.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559366936.A.23D.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559368226.A.42E.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559368956.A.476.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559370491.A.984.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559371209.A.353.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559372490.A.1A5.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559373674.A.CAC.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559376739.A.0E6.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559377266.A.132.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559377458.A.13B.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559378052.A.F8F.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559379907.A.CE0.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559382718.A.D42.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559382824.A.11F.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559383706.A.E0D.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559384152.A.78A.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559384259.A.E9B.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559386644.A.26E.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559390990.A.6B1.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559392554.A.D14.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559393428.A.16E.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559396124.A.5AD.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559398071.A.5EA.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559401832.A.ADA.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559402918.A.117.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559404204.A.A15.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559405776.A.9D9.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559405964.A.AE1.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559409665.A.122.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559414865.A.AD2.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559417561.A.C02.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559422197.A.521.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559423991.A.91E.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559425518.A.968.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559435514.A.E58.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559442175.A.610.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559443175.A.886.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559444418.A.569.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559444987.A.AA4.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559445208.A.6B0.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559446054.A.108.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559446245.A.BB4.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559447631.A.A01.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559450640.A.591.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559453173.A.1D0.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559457467.A.942.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559458395.A.637.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559461634.A.D6F.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559461776.A.B3C.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559464833.A.E27.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559465728.A.3B6.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559466545.A.560.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559467101.A.E60.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559468095.A.089.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559469973.A.2FA.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559470337.A.077.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559471929.A.D5E.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559472495.A.58B.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559475172.A.24A.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559475399.A.335.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559477363.A.4CC.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559477609.A.6DF.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559477657.A.568.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559480461.A.52A.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559481649.A.A6F.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559483578.A.AFE.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559484378.A.1E4.html&quot;
-## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559486596.A.792.html&quot;</code></pre>
+<pre><code>## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559785375.A.6CC.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559785445.A.D02.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559786478.A.894.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559788644.A.D36.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559790773.A.B16.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559791308.A.B53.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559791570.A.C0B.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559791876.A.289.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559792117.A.D83.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559792689.A.689.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559793036.A.EEA.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559793299.A.E78.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559793961.A.994.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559794095.A.E45.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559794769.A.A9E.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559795402.A.FDE.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559796070.A.5CF.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559799962.A.4FF.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559800177.A.5E8.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559800270.A.1F8.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559800815.A.C35.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559802161.A.E4A.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559803879.A.595.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559804244.A.393.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559805139.A.095.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559805180.A.751.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559805657.A.F8A.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559807667.A.ADC.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559808569.A.902.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559808822.A.0E7.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559808857.A.2E7.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559809000.A.75E.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559810273.A.C2E.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559811157.A.716.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559812375.A.9A7.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559812663.A.5FF.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559813073.A.5D3.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559813906.A.CCA.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559816710.A.97B.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559816822.A.47F.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559816878.A.29A.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559817186.A.C24.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559819723.A.A5B.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559820887.A.8BB.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559821107.A.392.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559821695.A.F45.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559824136.A.9AC.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559825178.A.DE7.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559825316.A.0D3.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559826490.A.CAF.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559826988.A.45D.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559828048.A.C18.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559828529.A.595.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559829358.A.DB1.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559829975.A.CB5.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559830388.A.D5B.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559830541.A.477.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559830643.A.1C1.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559831591.A.B4B.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559831746.A.C84.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559834098.A.905.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559834683.A.8F9.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559834792.A.FF6.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559835233.A.64F.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559835575.A.91C.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559835763.A.73F.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559844575.A.43D.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559859934.A.84C.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559866089.A.C02.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559870948.A.EC3.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559873584.A.4FA.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559873744.A.294.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559876302.A.15F.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559876955.A.3BB.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559877649.A.C4E.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559877918.A.B8D.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559878747.A.2BC.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559879065.A.8FC.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559879350.A.4AE.html&quot;
+## [1] &quot;https://www.ptt.cc/bbs/Stock/M.1559882545.A.443.html&quot;</code></pre>
 <pre class="r"><code>content &lt;- as.list(content)
 toSpace &lt;- content_transformer(function(x, pattern) {
   return (gsub(pattern, &quot;&quot;, x))}
@@ -648,32 +648,32 @@ for(k in 2:n){
 TDMatrix[is.na(TDMatrix)] &lt;- 0 
 head(TDMatrix)</code></pre>
 <pre><code>##      d 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
-## 1 一句 1 0 1 0 0 0 0 0 0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0
-## 2 一打 1 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
-## 3 一次 1 0 0 1 0 1 1 0 0  0  0  1  0  0  0  1  0  0  0  0  0  0  1  0  0
-## 4 一定 2 0 0 1 2 1 4 1 1  0  0  0  2  0  0  0  0  0  0  0  0  0  0  0  0
-## 5 一直 2 0 2 0 0 0 0 0 0  2  0  3  0  1  1  1  3  0  0  2  0  0  0  1  0
-## 6 一律 1 0 0 1 0 1 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+## 1 一年 1 3 0 0 1 0 0 1 0  0  1  0  0  0  0  0  2  0  0  0  0  0  0  0  0
+## 2 一直 1 2 1 1 0 0 0 1 1  0  0  0  2  0  0  3  1  0  0  0 13  0  2  1  1
+## 3 一般 2 0 0 1 0 0 0 0 0  4  0  1  0  0  0  0  1  1  0  0  0  0  0  0  0
+## 4 三大 1 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+## 5 三個 1 0 0 0 0 0 0 0 0  0  1  0  0  0  0  0  0  0  0  0  1  0  0  0  0
+## 6 大淫 1 0 0 0 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
 ##   26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
-## 1  0  0  0  1  0  0  0  0  0  1  0  0  1  0  0  1  0  0  0  0  0  1  0  5
-## 2  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
-## 3  0  0  1  0  1  1  0  0  1  0  0  1  1  0  0  0  0  1  1  0  1  2  0  4
-## 4  2  2  1  0  2  0  0  0  0  1  0  0  1  0  1  5  2  0  0  0  1 10  8  0
-## 5  0  1  0  2  2  0  0  1  1  2  0  3  2  0  0  2  4  0  1  0  0  5  1 20
-## 6  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  2  0  0  0  0
+## 1  0  0  1  0  1  0  0  2  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0
+## 2  1  0  0  0  0  2  0  0  0  1  0  0  1  0  2  0  5  0  0  0  2  0  0  0
+## 3  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0
+## 4  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+## 5  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+## 6  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
 ##   50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
-## 1  0  0  1  0  0  0  0  0  1  1  0  0  0  0  0  0  1  0  0  0  0  0  0  0
-## 2  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
-## 3  1  0  0  0  0  0  0  2  4  5  4  0  1  0  0  0  0  0  0  0  0  0  4  0
-## 4  4  6  0  0  0  1  2  0  3  3  0  3  1  0  0  5  0  2  0  0  0  0  0  0
-## 5  0  1  1  0  0  1  1  0  3  0  0  0  0  0  0  0  0  0  0  0  0  1  0  1
-## 6  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0
+## 1  0  2  0  0  0  0  0  0  0  1  0  0  0  0  2  0  0  0  0  0  0  0  0  0
+## 2  0  0  2  0  0  1  0  0  0  1  1  1  0  1  0  1  0  0  2  0  1  0  0  0
+## 3  0  2  1  0  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+## 4  0  0  0  0  0  0  0  0  0  0  0  5  0  0  0  1  0  0  0  0  0  0  0  0
+## 5  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+## 6  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
 ##   74 75 76 77 78 79 80
-## 1  1  0  1  0  0  0  0
-## 2  0  0  0  0  0  0  0
-## 3  1  0  0  1  0  4  0
-## 4  2  0  1  0  1  0  0
-## 5  3  0  3  4  1  0  0
+## 1  2  0  0  0  0  0  0
+## 2  0  0  3  0  0  0  0
+## 3  0  0  0  1  0  0  0
+## 4  0  0  0  0  0  0  0
+## 5  0  0  0  0  0  0  0
 ## 6  0  0  0  0  0  0  0</code></pre>
 </div>
 <div id="tf-idf" class="section level2">
@@ -694,8 +694,8 @@ TFIDF[,2:(n+1)] &lt;- (TFIDF[,2:(n+1)] / MtY) * MtX
 stopLine = rowSums(TFIDF[,2:(n+1)]) 
 delID = which(stopLine == 0) 
 head(TFIDF[delID,1]) </code></pre>
-<pre><code>## [1] 文章 作者 坊   批   來自 時間
-## 12585 Levels: 一句 一打 一次 一定 一直 一律 一個 一家 一堆 一帶 一間 ... 關看</code></pre>
+<pre><code>## [1] 作者 來自
+## 11761 Levels: 一年 一直 一般 三大 三個 大淫 大幅 大舉 小兒 小幅 小鵝 ... 爛貨</code></pre>
 <pre class="r"><code>TDMatrix = TDMatrix[-delID,] 
 TFIDF= TDMatrix</code></pre>
 </div>
@@ -713,87 +713,181 @@ rownames(TopWords) = colnames(TFIDF)[2:(n+1)]
 TopWords = droplevels(TopWords)
 
 TopWords</code></pre>
-<pre><code>##        V1     V2     V3     V4   V5
-## 1    中國   美國   華為   公司   跟
-## 2    伊朗   美國   公司   華為 產品
-## 3    美國   華為   知道   中國   說
-## 4    美國   中國   企業   國家   只
-## 5    自己   盤面     而   因為 持股
-## 6    美國   中國 加拿大     又   只
-## 7    環球   大戶   編輯   散戶   晶
-## 8      還   大盤   進場   技術 看看
-## 9    其實   國際   指數   可以 台灣
-## 10   關稅   中國     和   美國   他
-## 11   公司   手法     上     對   看
-## 12   美國   華為   國家   中共 後門
-## 13   散戶   股市     啊     女 已經
-## 14   聯想   中國   美國   筆電 改名
-## 15     多   分享     可     後   做
-## 16     到     倍   表示     賺 國巨
-## 17   壽險     股     金   獲利 玉山
-## 18   公司   盈餘   投資     拿   好
-## 19   基金   護盤   政府     讓   年
-## 20   避險   交易   開盤   可以 投機
-## 21   英國   設備   華為   網路   可
-## 22   股息   自己   記帳   多少 計算
-## 23   員工   薪資     萬   公司 平均
-## 24   香港   豬肉   豬瘟   中國 非洲
-## 25   必應   公司     等   今年 演出
-## 26   因為   開始     還     月 可能
-## 27     賣   定存   玉山     啊 獲利
-## 28   定存   銀行   股票   所以   股
-## 29   投資   全球   經濟   買點 拉回
-## 30     才     錢   股市     很   買
-## 31   軟體   下單   券商     用   好
-## 32   研究   報告   請益   發文   請
-## 33   印度   美國   中國   關稅   對
-## 34     　   證券   中泰   投資 冠石
-## 35     看     用     跟   覺得   很
-## 36   水桶   一週   英國   違反 板規
-## 37     文   違反   水桶   一週   之
-## 38   美國   關稅 墨西哥 貿易戰 川普
-## 39   日盛   可以   自動     賣   單
-## 40   歐盟   美國   日本   中國 國家
-## 41   股市 收視率   年底     湖   年
-## 42   美元   美國   中國   伊朗 貨幣
-## 43   財報     看   分析     懂   跟
-## 44   中國   美國     將   華為 調查
-## 45     課     只   美國   之後 出發
-## 46   中國     禁   企業   自己 華為
-## 47   中國   美國   稀土 貿易戰   只
-## 48   中國   美國     看     跟 川普
-## 49   中國   美國     阿   川普   他
-## 50   中國   美國     吃   一定 川普
-## 51   台灣   中國   美國     說 問題
-## 52   中國   美國 白皮書     中 自己
-## 53 子公司     大     阿   編輯   跟
-## 54   中國   獲利   分行     月   為
-## 55   美國   中國   關稅   加徵   中
-## 56   美國   中國   台股     中   和
-## 57   統一   中國 星巴克     說 市場
-## 58   海嘯   中國   鴻海     他 金融
-## 59   黃金   貨幣   海嘯   國家 可以
-## 60   海嘯   政府   南向   影響 金融
-## 61   美國   華為   高通   中國   和
-## 62   中國   大陸   可能     他 退休
-## 63   國安     蔡   中國   情勢 台灣
-## 64   泰國   朋友   台灣     咖   對
-## 65   中國   美國   台灣   印度 一定
-## 66   中國 白皮書     智   財權 美國
-## 67     　   分析   高點   停損 成長
-## 68     艦     艘   軍方   飛彈   年
-## 69   果凍   台股   三倍   景氣 減資
-## 70     空     又     對     做   想
-## 71   華為   美國 台積電   三星 出貨
-## 72   海嘯   金融     到   政府   們
-## 73   所以   財報   月份     多   錯
-## 74   銀行   中國     和   壞帳 問題
-## 75   今年   規模   國際   創新   　
-## 76   景氣   美國   中國     郭 海嘯
-## 77   玉山     金   出貨   成長 山頂
-## 78   海嘯   鴻海   手機   華為 郭董
-## 79   海嘯   金融   經濟     比 影響
-## 80   手機   華為     上   市場 全球</code></pre>
+<pre><code>##        V1       V2         V3     V4       V5
+## 1      月     外資         淨   匯入   億美元
+## 2    今天     公司       可以     還     滷肉
+## 3    中國     造假       美國   數據       只
+## 4  金融股       買       電子     賺     公主
+## 5  金融股     壽險         跟     看     什麼
+## 6    彰銀     澄清         吳 台新金   吳東亮
+## 7    中國     民企       企業   大陸     美國
+## 8    玉山       賺         金   翻倍     結果
+## 9      元     本業       益航   今年     每年
+## 10 巴菲特     一般       台灣 老巴來     靈活
+## 11     買       多       一堆     元       賺
+## 12     買       別       原因   定存     臺灣
+## 13   外資     台積     台積電   花旗     華為
+## 14     買     利率       定存     賣       高
+## 15   目前     損益         月     多       對
+## 16   一直       空       外資     對       等
+## 17   戰車     台灣       美國     買     中國
+## 18 東南亞     企業         來   綠色     發行
+## 19   油價     胸罩         好   台股     股市
+## 20   利率 經濟衰退         殖     年     衰退
+## 21     又     空軍         多   今天     記住
+## 22   合併     千元       公司   淨利     自結
+## 23   南向     中國     東南亞   台商       新
+## 24   小兒     外資       散戶     賣       又
+## 25   政府     南向         新 發大財     什麼
+## 26   美股     美元         對   降息     美債
+## 27   外資       多       金額   持續     買賣
+## 28     買     臺灣       編輯     多       隻
+## 29   台灣     美國       中國     他       卜
+## 30   中國       對       最大   美國   億美元
+## 31   美國     美元       美債   問題       說
+## 32   今天       買       區間   訂單       亨
+## 33   華為     手機       兩年     囤     囤貨
+## 34     　     玉山         金     元     公司
+## 35   波音     中國       飛機     和     談判
+## 36     月       及       宏達   今年     內容
+## 37   台灣     公司         讚   雷神     戰車
+## 38 新加坡     出口         舔     月       年
+## 39     超     買賣         外     合       資
+## 40     金       超       買賣   元大       多
+## 41     　       元       元大   公司       金
+## 42     好       大         跟   今天       多
+## 43   公司     臺灣       期貨   稅前     編輯
+## 44 亞馬遜     自動       駕駛   公司     投資
+## 45   國泰       元       公司     月       金
+## 46   操作     停損       自己     買       好
+## 47   升息     延後       可能     為       對
+## 48   官股       跟         啦   護盤     今天
+## 49   美國   劉德音     台積電   收購     公司
+## 50     億     公司       新光     元     盈餘
+## 51 新加坡       萬         比     又       去
+## 52   融資     信貸         用     還     水位
+## 53     月     營收       皮卡   臺灣     其他
+## 54     啊       而       一般     好       或
+## 55   外資     長榮       罷工   開始       等
+## 56     買       大       美國 台積電     客戶
+## 57   日幣     臺灣         億   公司     目前
+## 58   美國     監管       上市   公司     中國
+## 59     說       買         用   美國     台積
+## 60     他       為       空頭   牛市     股市
+## 61   下跌     滬指         月     日     板塊
+## 62   美國     投資       台灣 台積電 經濟部長
+## 63   外資     市場         月   台灣     持股
+## 64     月     宏達       營收     電     出貨
+## 65 大立光     跌停         法     月       日
+## 66     月     群創       深超     前     尺寸
+## 67   短空   強勢股         多   預計       空
+## 68   中國     美國       川普     還       到
+## 69   美國     中國       關稅   降息     川普
+## 70   組裝     戰機       台灣   漢翔     升級
+## 71   收購   半導體     億美元     以     公司
+## 72   中國       月       指數 投資者     下跌
+## 73   華為     中國     諾基亞   商用       個
+## 74     他       買       可以     做     方法
+## 75 墨西哥     關稅         對   美國     美股
+## 76   中國     國家 發展中國家     說     開發
+## 77     買     可以       進場   外資     定期
+## 78   手機       將       中國   準備       好
+## 79   東元     冷氣         元     禾     台灣
+## 80   群創       月     成分股     前     指數</code></pre>
+<div id="list-top-words-and-its-frequency" class="section level2">
+<h2>List top words and its frequency</h2>
+<pre class="r"><code>dTDMatrix = as.character(TDMatrix$d)
+AT = as.data.frame( table(as.matrix(TopWords)) )
+AT = AT[order(AT$Freq, decreasing = TRUE),]
+
+kable(head(AT))</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+中國
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+126
+</td>
+<td style="text-align:left;">
+美國
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+公司
+</td>
+<td style="text-align:right;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+33
+</td>
+<td style="text-align:left;">
+月
+</td>
+<td style="text-align:right;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+167
+</td>
+<td style="text-align:left;">
+買
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+51
+</td>
+<td style="text-align:left;">
+台灣
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>“China” “US” are the top words in Stock board and one way to explain the result is that the two countries influence our nation’s economy a lot.</p>
 </div>
 
 

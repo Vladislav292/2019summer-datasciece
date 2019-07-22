@@ -187,3 +187,16 @@ TopWords
 
 ```
 
+## List top words and its frequency
+```{r}
+dTDMatrix = as.character(TDMatrix$d)
+AT = as.data.frame( table(as.matrix(TopWords)) )
+AT = AT[order(AT$Freq, decreasing = TRUE),]
+
+kable(head(AT))
+
+```
+
+
+# Conclusion
+"China" "US" are the top words in Stock board and one way to explain the result is that the two countries influence our nation's economy a lot. 
